@@ -10,6 +10,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 
 class Create extends Component
@@ -18,6 +19,8 @@ class Create extends Component
     public string $email = '';
     public string $type = '';
     public string $status = '';
+    public string $password = '';
+    public string $password_confirmation = '';
 
     protected function rules(): array
     {
@@ -26,6 +29,7 @@ class Create extends Component
             'email' => ['required', 'email', 'min:3', 'max:255', Rule::unique('users', 'email')],
             'type' => ['required', 'string', Rule::in(Type::cases())],
             'status' => ['required', 'string', Rule::in(Status::cases())],
+            'password' => ['required', 'string', 'confirmed', Password::defaults()],
         ];
     }
 
@@ -34,7 +38,7 @@ class Create extends Component
         $this->validateOnly($property);
     }
 
-    public function save(): void
+    public function create(): void
     {
         $this->validate();
 
@@ -43,6 +47,7 @@ class Create extends Component
             'email' => $this->email,
             'type' => $this->type,
             'status' => $this->status,
+            'password' => Hash::make($this->password)
         ]);
 
         session()->flash('notify', [

@@ -26,8 +26,8 @@ trait WithBulkActions
     public function updatedSelectPage($value): void
     {
         if (empty($value)) {
-            $this->selectAll = false;
             $this->selected = [];
+            $this->selectAll = false;
 
             return;
         }

@@ -3,8 +3,7 @@
 use App\Livewire\Actions\Logout;
 use Livewire\Volt\Component;
 
-new class extends Component
-{
+new class extends Component {
     /**
      * Log the current user out of the application.
      */
@@ -12,9 +11,10 @@ new class extends Component
     {
         $logout();
 
-        $this->redirect('/', navigate: true);
+        $this->redirect("/", navigate: true);
     }
-}; ?>
+};
+?>
 
 <div>
     <div x-show="open" class="relative z-50 lg:hidden"
@@ -72,77 +72,6 @@ new class extends Component
                                             Dashboard
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#"
-                                           class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                           x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                            <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                 stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z">
-                                                </path>
-                                            </svg>
-                                            Team
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                           class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                           x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                            <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                 stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z">
-                                                </path>
-                                            </svg>
-                                            Projects
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                           class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                           x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                            <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                 stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5">
-                                                </path>
-                                            </svg>
-                                            Calendar
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                           class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                           x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                            <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                 stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75">
-                                                </path>
-                                            </svg>
-                                            Documents
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                           class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                           x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                            <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                 stroke="currentColor" aria-hidden="true">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"></path>
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"></path>
-                                            </svg>
-                                            Reports
-                                        </a>
-                                    </li>
                                 </ul>
                             </li>
                             <li>
@@ -179,35 +108,30 @@ new class extends Component
                             <li>
                                 <div
                                     class="text-xs font-semibold leading-6 text-secondary-400 dark:text-secondary-300">
-                                    Your teams
-                                </div>
+                                    Academic Management</div>
                                 <ul role="list" class="-mx-2 mt-2 space-y-1">
                                     <li>
-                                        <a href="#"
-                                           class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                           x-state:on="Current" x-state:off="Default"
-                                           x-state-description="Current: &quot;bg-secondary-50 text-primary-500&quot;, Default: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                            <span
-                                                class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-secondary-200 bg-white text-[0.625rem] font-medium text-secondary-400 group-hover:border-primary-500 group-hover:text-primary-500 dark:border-secondary-600 dark:bg-secondary-800 dark:text-secondary-500">H</span>
-                                            <span class="truncate">Heroicons</span>
+                                        <a href="{{ route('admin.branches') }}" wire:navigate
+                                           class="{{ request()->routeIs(['admin.branches', 'admin.branches.*']) ? 'bg-primary-500 text-secondary-100' : 'text-secondary-700 dark:text-secondary-300 hover:text-primary-500 hover:bg-secondary-50 dark:hover:text-primary-500 dark:hover:bg-secondary-700' }} group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6">
+                                            <svg class="{{ request()->routeIs(['admin.users', 'admin.users.*']) ? 'text-secondary-100' : 'text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500' }} h-6 w-6 shrink-0"
+                                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                                 stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                                            </svg>
+                                            {{ __('Users') }}
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#"
-                                           class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                           x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                            <span
-                                                class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-secondary-200 bg-white text-[0.625rem] font-medium text-secondary-400 group-hover:border-primary-500 group-hover:text-primary-500 dark:border-secondary-600 dark:bg-secondary-800 dark:text-secondary-500">T</span>
-                                            <span class="truncate">Tailwind Labs</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                           class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                           x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                            <span
-                                                class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-secondary-200 bg-white text-[0.625rem] font-medium text-secondary-400 group-hover:border-primary-500 group-hover:text-primary-500 dark:border-secondary-600 dark:bg-secondary-800 dark:text-secondary-500">W</span>
-                                            <span class="truncate">Workcation</span>
+                                        <a href="{{ route('admin.auth.profile') }}" wire:navigate
+                                           class="{{ request()->routeIs(['admin.auth.profile']) ? 'bg-primary-500 text-secondary-100' : 'text-secondary-700 dark:text-secondary-300 hover:text-primary-500 hover:bg-secondary-50 dark:hover:text-primary-500 dark:hover:bg-secondary-700' }} group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6">
+                                            <svg class="{{ request()->routeIs(['admin.auth.profile']) ? 'text-secondary-100' : 'text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500' }} h-6 w-6 shrink-0"
+                                                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                 aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+
+                                            {{ __('My Profile') }}
                                         </a>
                                     </li>
                                 </ul>
@@ -247,89 +171,19 @@ new class extends Component
                                     Dashboard
                                 </a>
                             </li>
-                            <li>
-                                <a href="#"
-                                   class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                   x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                    <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                         aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z">
-                                        </path>
-                                    </svg>
-                                    Team
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                   x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                    <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                         aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z">
-                                        </path>
-                                    </svg>
-                                    Projects
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                   x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                    <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                         aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5">
-                                        </path>
-                                    </svg>
-                                    Calendar
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                   x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                    <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                         aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                    Documents
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                   x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                    <svg class="h-6 w-6 shrink-0 text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500"
-                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                         aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"></path>
-                                    </svg>
-                                    Reports
-                                </a>
-                            </li>
-
                         </ul>
                     </li>
                     <li>
-                        <div class="text-xs font-semibold leading-6 text-secondary-400 dark:text-secondary-300">User
-                            Management</div>
+                        <div
+                            class="text-xs font-semibold leading-6 text-secondary-400 dark:text-secondary-300">
+                            User Management</div>
                         <ul role="list" class="-mx-2 mt-2 space-y-1">
                             <li>
                                 <a href="{{ route('admin.users') }}" wire:navigate
                                    class="{{ request()->routeIs(['admin.users', 'admin.users.*']) ? 'bg-primary-500 text-secondary-100' : 'text-secondary-700 dark:text-secondary-300 hover:text-primary-500 hover:bg-secondary-50 dark:hover:text-primary-500 dark:hover:bg-secondary-700' }} group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6">
                                     <svg class="{{ request()->routeIs(['admin.users', 'admin.users.*']) ? 'text-secondary-100' : 'text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500' }} h-6 w-6 shrink-0"
-                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                         aria-hidden="true">
+                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                         stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                               d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                                     </svg>
@@ -351,38 +205,21 @@ new class extends Component
                         </ul>
                     </li>
                     <li>
-                        <div class="text-xs font-semibold leading-6 text-secondary-400 dark:text-secondary-300">Your
-                            teams</div>
+                        <div
+                            class="text-xs font-semibold leading-6 text-secondary-400 dark:text-secondary-300">
+                            Academic Management</div>
                         <ul role="list" class="-mx-2 mt-2 space-y-1">
                             <li>
-                                <a href="#"
-                                   class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                   x-state:on="Current" x-state:off="Default"
-                                   x-state-description="Current: &quot;bg-secondary-50 text-primary-500&quot;, Default: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                    <span
-                                        class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-secondary-200 bg-white text-[0.625rem] font-medium text-secondary-400 group-hover:border-primary-500 group-hover:text-primary-500 dark:border-secondary-600 dark:bg-secondary-800 dark:text-secondary-500">H</span>
-                                    <span class="truncate">Heroicons</span>
+                                <a href="{{ route('admin.branches') }}" wire:navigate
+                                   class="{{ request()->routeIs(['admin.branches', 'admin.branches.*']) ? 'bg-primary-500 text-secondary-100' : 'text-secondary-700 dark:text-secondary-300 hover:text-primary-500 hover:bg-secondary-50 dark:hover:text-primary-500 dark:hover:bg-secondary-700' }} group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6">
+                                    <svg class="{{ request()->routeIs(['admin.branches', 'admin.branches.*']) ? 'text-secondary-100' : 'text-secondary-400 group-hover:text-primary-500 dark:text-secondary-500' }} h-6 w-6 shrink-0"
+                                         fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                         stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                    </svg>
+                                    {{ __('Branches') }}
                                 </a>
                             </li>
-                            <li>
-                                <a href="#"
-                                   class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                   x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                    <span
-                                        class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-secondary-200 bg-white text-[0.625rem] font-medium text-secondary-400 group-hover:border-primary-500 group-hover:text-primary-500 dark:border-secondary-600 dark:bg-secondary-800 dark:text-secondary-500">T</span>
-                                    <span class="truncate">Tailwind Labs</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   class="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-secondary-700 hover:bg-secondary-50 hover:text-primary-500 dark:text-secondary-300 dark:hover:bg-secondary-700 dark:hover:text-primary-500"
-                                   x-state-description="undefined: &quot;bg-secondary-50 text-primary-500&quot;, undefined: &quot;text-secondary-700 hover:text-primary-500 hover:bg-secondary-50&quot;">
-                                    <span
-                                        class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-secondary-200 bg-white text-[0.625rem] font-medium text-secondary-400 group-hover:border-primary-500 group-hover:text-primary-500 dark:border-secondary-600 dark:bg-secondary-800 dark:text-secondary-500">W</span>
-                                    <span class="truncate">Workcation</span>
-                                </a>
-                            </li>
-
                         </ul>
                     </li>
                 </ul>

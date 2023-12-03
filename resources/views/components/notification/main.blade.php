@@ -5,8 +5,8 @@
             this.messages.splice(this.messages.indexOf(message), 1)
         },
     }"
-    x-on:notify.window="let message = $event.detail[0]; messages.push(message); setTimeout(() => { remove(message) }, 5000)"
-    class="fixed inset-0 z-50 sm:flex flex-col items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:justify-start space-y-4"
+    x-on:notify.window="let message = $event.detail[0]; messages.push(message); setTimeout(() => { remove(message) }, 3500)"
+    class="fixed inset-0 z-[999] sm:flex flex-col items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:justify-start space-y-4"
 >
     <template x-for="(message, messageIndex) in messages" :key="messageIndex" hidden>
         <div

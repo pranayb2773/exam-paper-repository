@@ -2,24 +2,24 @@
     <div class="space-y-4 mx-auto h-full w-full px-4 md:px-6 lg:px-8 max-w-[87rem]">
         <!-- Bread crumbs -->
         <x-breadcrumbs.main>
-            <x-breadcrumbs.link>{{ __('Users') }}</x-breadcrumbs.link>
+            <x-breadcrumbs.link>{{ __('Branches') }}</x-breadcrumbs.link>
         </x-breadcrumbs.main>
 
         <!-- Page Header -->
         <header class="items-end justify-between space-y-2 sm:flex sm:space-x-4 sm:space-y-0 sm:rtl:space-x-reverse">
             <!-- Page Title -->
             <div>
-                <h1 class="text-2xl sm:text-3xl tracking-tight font-bold text-secondary-900 dark:text-secondary-100">{{ __('Users') }}</h1>
+                <h1 class="text-2xl sm:text-3xl tracking-tight font-bold text-secondary-900 dark:text-secondary-100">{{ __('Branches') }}</h1>
             </div>
 
             <!-- Add Action -->
             <div class="flex shrink-0 flex-wrap items-center justify-start gap-4">
                 <x-button.link-primary
                     wire:navigate
-                    href="{{ route('admin.users.create') }}"
+                    href="{{ route('admin.branches.create') }}"
                     class="text-sm normal-case"
                 >
-                    {{ __('New User') }}
+                    {{ __('New Branch') }}
                 </x-button.link-primary>
             </div>
         </header>
@@ -53,7 +53,7 @@
 
                                     <x-slot:content>
                                         <x-dropdown.button
-                                            @click="$dispatch('open-modal', 'confirm-user-deletion')"
+                                            @click="$dispatch('open-modal', 'confirm-branches-deletion')"
                                             type="button" class="space-x-2 hover:bg-danger-500 dark:hover:bg-danger-500"
                                         >
                                             <x-icon.trash class="text-danger-500 group-hover:text-gray-100"/>
@@ -128,19 +128,8 @@
                                             <select wire:model.live="status" id="filter-status"
                                                     class="w-full mt-1 text-sm rounded-md shadow-sm dark:bg-secondary-900 dark:text-secondary-300 border-secondary-300 dark:border-secondary-700 focus:border-primary-500 dark:focus:border-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600">
                                                 <option value="">Select user status</option>
-                                                @foreach(\App\Enums\User\Status::cases() as $status)
+                                                @foreach(\App\Enums\Branch\Status::cases() as $status)
                                                     <option value="{{ $status->value }}">{{ $status->label() }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="w-full px-2 py-2 text-sm text-secondary-700" role="menuitem">
-                                            <x-label.main for="filter-type">Type
-                                            </x-label.main>
-                                            <select wire:model.live="type" id="filter-type"
-                                                    class="w-full mt-1 text-sm rounded-md shadow-sm dark:bg-secondary-900 dark:text-secondary-300 border-secondary-300 dark:border-secondary-700 focus:border-primary-500 dark:focus:border-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600">
-                                                <option value="">Select user type</option>
-                                                @foreach(\App\Enums\User\Type::cases() as $type)
-                                                    <option value="{{ $type->value }}">{{ $type->label() }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -177,7 +166,7 @@
                             <span>
                                 <button type="button" wire:click="$set('selectAll', true)"
                                         class="text-sm font-medium text-primary-600">
-                                    Select all {{ $users->total() }}
+                                    Select all {{ $branches->total() }}
                                 </button>
                             </span>
                                 <span>
@@ -189,7 +178,7 @@
                             </div>
                         @else
                             <div class="flex gap-x-3">
-                                <span class="dark:text-white">{{ $users->total() }} records selected.</span>
+                                <span class="dark:text-white">{{ $branches->total() }} records selected.</span>
                             </div>
                             <div class="flex gap-x-3">
                                 <span>
@@ -202,9 +191,9 @@
                         @endif
                     </div>
                 @endif
-                <!-- Users Table -->
+                <!-- Branch Table -->
                 <div>
-                    @if ($users->isEmpty())
+                    @if ($branches->isEmpty())
                         <div class="flex items-center justify-center border-t p-4 dark:border-secondary-700">
                             <div
                                 class="mx-auto flex flex-1 flex-col items-center justify-center space-y-6 bg-white p-6 text-center dark:bg-secondary-800">
@@ -250,16 +239,14 @@
                                                  class="w-full">Name
                                 </x-table.heading>
 
-                                <x-table.heading sortable wire:click="sortBy('email')"
-                                                 :direction="$sortColumn === 'email' ? $sortDirection : ''">Email
+                                <x-table.heading sortable wire:click="sortBy('no_of_semisters')"
+                                                 :direction="$sortColumn === 'email' ? $sortDirection : ''">No Of Semisters
                                 </x-table.heading>
+
+                                <x-table.heading>Subjects Count</x-table.heading>
 
                                 <x-table.heading sortable wire:click="sortBy('status')"
                                                  :direction="$sortColumn === 'status' ? $sortDirection : ''">Status
-                                </x-table.heading>
-
-                                <x-table.heading sortable wire:click="sortBy('type')"
-                                                 :direction="$sortColumn === 'type' ? $sortDirection : ''">Type
                                 </x-table.heading>
 
                                 <x-table.heading sortable wire:click="sortBy('updated_at')"
@@ -272,47 +259,47 @@
 
                             <!-- Table Body -->
                             <x-slot:body>
-                                @foreach ($users as $user)
-                                    <x-table.row wire:key="row-{{ $user->id }}" class="text-base">
+                                @foreach ($branches as $branch)
+                                    <x-table.row wire:key="row-{{ $branch->id }}" class="text-base">
                                         <x-table.cell class="pr-0">
                                             <x-input.checkbox wire:model.live="selected"
-                                                              value="{{ $user->id }}"></x-input.checkbox>
+                                                              value="{{ $branch->id }}"></x-input.checkbox>
                                         </x-table.cell>
 
                                         <x-table.cell>
                                             <dl>
                                                 <dt class="sr-only">Display Name</dt>
                                                 <dd class="font-medium text-secondary-900 dark:text-secondary-200">
-                                                    {{ $user->name }}
+                                                    {{ $branch->name }}
                                                 </dd>
                                             </dl>
                                         </x-table.cell>
 
-                                        <x-table.cell>{{ $user->email }}</x-table.cell>
+                                        <x-table.cell class="text-center">{{ $branch->no_of_semisters }}</x-table.cell>
 
-                                        <x-table.cell>{{ $user->status->label() }}</x-table.cell>
+                                        <x-table.cell class="text-center">{{ $branch->subjects_count }}</x-table.cell>
 
-                                        <x-table.cell>{{ $user->type->label() }}</x-table.cell>
+                                        <x-table.cell>{{ $branch->status->label() }}</x-table.cell>
 
                                         <x-table.cell>
                                             <dl>
                                                 <dt class="sr-only">Updated At</dt>
                                                 <dd class="text-secondary-700 dark:text-secondary-200">
-                                                    {{ $user->updated_at->format('F j, Y g:i a') }}
+                                                    {{ $branch->updated_at->format('F j, Y g:i a') }}
                                                 </dd>
                                                 <dt class="sr-only">Human readable</dt>
                                                 <dd class="text-secondary-500 dark:text-secondary-400">
-                                                    {{ $user->updated_at->diffForHumans() }}
+                                                    {{ $branch->updated_at->diffForHumans() }}
                                                 </dd>
                                             </dl>
                                         </x-table.cell>
 
                                         <x-table.cell>
                                             <div class="flex items-center space-x-2">
-                                                <x-icon.eye
-                                                    wire:click="$dispatch('openModal', { component: 'admin.user.show', arguments: { user: {{ $user->id }} }})"
-                                                    class="cursor-pointer text-secondary-400 hover:text-secondary-500 dark:text-secondary-400 dark:hover:text-secondary-300"/>
-                                                <a wire:navigate href="{{ route('admin.users.edit', [$user->id]) }}">
+                                                <a wire:navigate href="{{ route('admin.branches.show', [$branch->id]) }}">
+                                                    <x-icon.eye class="cursor-pointer text-secondary-400 hover:text-secondary-500"/>
+                                                </a>
+                                                <a wire:navigate href="{{ route('admin.branches.edit', [$branch->id]) }}">
                                                     <x-icon.pencil class="cursor-pointer text-primary-600 hover:text-primary-500"/>
                                                 </a>
                                             </div>
@@ -323,23 +310,23 @@
                         </x-table.main>
                     @endif
                 </div>
-                @if($users->isNotEmpty())
+                @if($branches->isNotEmpty())
                     <!-- Pagination -->
                     <div>
-                        {{ $users->onEachSide(0)->links('vendor.livewire.tailwind', ['arrPerPage' => $arrPerPage]) }}
+                        {{ $branches->onEachSide(0)->links('vendor.livewire.tailwind', ['arrPerPage' => $arrPerPage]) }}
                     </div>
                 @endif
             </div>
         </div>
     </div>
 
-    <!-- User(s) Delete Confirmation Modal -->
-    <x-modal.main name="confirm-user-deletion" :show="false">
-        <form wire:submit="deleteUsers" class="p-6">
+    <!-- Branch(es) Delete Confirmation Modal -->
+    <x-modal.main name="confirm-branches-deletion" :show="false">
+        <form wire:submit="deleteBranches" class="p-6">
 
             <div class="flex items-center justify-between pb-3">
                 <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                    {{ __('Are you sure you want to delete selected user(s)?') }}
+                    {{ __('Are you sure you want to delete selected branch(es)?') }}
                 </h2>
                 <button type="button" x-on:click="$dispatch('close')"
                         class="absolute right-0 top-0 mr-5 mt-5 flex h-8 w-8 items-center justify-center rounded-full text-gray-600 transition duration-150 ease-in-out hover:bg-gray-50 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 dark:focus:ring-offset-secondary-800">
@@ -351,7 +338,7 @@
             </div>
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                {{ __('Once selected user(s) deleted, all of their data will be permanently deleted.') }}
+                {{ __('Once selected branch(es) deleted, all of it is data will be permanently deleted.') }}
             </p>
 
             <div class="mt-6 flex justify-end">

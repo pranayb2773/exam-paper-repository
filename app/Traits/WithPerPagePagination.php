@@ -21,7 +21,6 @@ trait WithPerPagePagination
     {
         Session::put('perPage', $value);
         $this->reset(['selected', 'selectAll', 'selectPage']);
-        $this->resetPage();
     }
 
     public function applyPagination($query)

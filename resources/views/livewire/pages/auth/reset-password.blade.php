@@ -10,13 +10,14 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Locked;
 use Livewire\Volt\Component;
 
-new #[Layout('layouts.guest', ["title" => "Reset Password"])] class extends Component
+new #[Layout("layouts.guest", ["title" => "Reset Password"])] class extends
+    Component
 {
     #[Locked]
-    public string $token = '';
-    public string $email = '';
-    public string $password = '';
-    public string $password_confirmation = '';
+    public string $token = "";
+    public string $email = "";
+    public string $password = "";
+    public string $password_confirmation = "";
 
     /**
      * Mount the component.
@@ -25,7 +26,7 @@ new #[Layout('layouts.guest', ["title" => "Reset Password"])] class extends Comp
     {
         $this->token = $token;
 
-        $this->email = request()->string('email');
+        $this->email = request()->string("email");
     }
 
     /**
@@ -34,21 +35,28 @@ new #[Layout('layouts.guest', ["title" => "Reset Password"])] class extends Comp
     public function resetPassword(): void
     {
         $this->validate([
-            'token' => ['required'],
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
+            "token" => ["required"],
+            "email" => ["required", "string", "email"],
+            "password" => [
+                "required",
+                "string",
+                "confirmed",
+                Rules\Password::defaults(),
+            ],
         ]);
 
         // Here we will attempt to reset the user's password. If it is successful we
         // will update the password on an actual user model and persist it to the
         // database. Otherwise we will parse the error and return the response.
         $status = Password::reset(
-            $this->only('email', 'password', 'password_confirmation', 'token'),
+            $this->only("email", "password", "password_confirmation", "token"),
             function ($user) {
-                $user->forceFill([
-                    'password' => Hash::make($this->password),
-                    'remember_token' => Str::random(60),
-                ])->save();
+                $user
+                    ->forceFill([
+                        "password" => Hash::make($this->password),
+                        "remember_token" => Str::random(60),
+                    ])
+                    ->save();
 
                 event(new PasswordReset($user));
             }
@@ -58,16 +66,17 @@ new #[Layout('layouts.guest', ["title" => "Reset Password"])] class extends Comp
         // the application's home authenticated view. If there is an error we can
         // redirect them back to where they came from with their error message.
         if ($status != Password::PASSWORD_RESET) {
-            $this->addError('email', __($status));
+            $this->addError("email", __($status));
 
             return;
         }
 
-        Session::flash('status', __($status));
+        Session::flash("status", __($status));
 
-        $this->redirectRoute('login', navigate: true);
+        $this->redirectRoute("login", navigate: true);
     }
-}; ?>
+};
+?>
 
 <div>
     <form wire:submit="resetPassword">
