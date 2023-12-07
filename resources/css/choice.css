@@ -465,7 +465,7 @@ select:not(.choices) {
 }
 
 .choices__item--choice.choices__item--selectable {
-    @apply rounded-md text-secondary-900 dark:text-white;
+    @apply !pr-2.5 rounded-md text-secondary-900 dark:text-white;
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted,

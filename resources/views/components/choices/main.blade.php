@@ -31,6 +31,7 @@
                         searchEnabled: true,
                         searchFields: ['label'],
                         searchPlaceholderValue: 'Start typing to search...',
+                        itemSelectText: '',
                     };
 
                     let choices = new Choices(this.$refs.select, config)

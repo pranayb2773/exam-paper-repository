@@ -38,7 +38,7 @@ class Edit extends Component
         // Dispatch event
         $this->dispatch('notify', [
             'type' => 'success',
-            'content' => 'User Updated Successfully.'
+            'content' => 'Branch Updated Successfully.'
         ]);
     }
 

@@ -45,7 +45,7 @@ class Edit extends ModalComponent
         // Dispatch event
         $this->dispatch('notify', [
             'type' => 'success',
-            'content' => 'User Updated Successfully.'
+            'content' => 'Subject Updated Successfully.'
         ]);
     }
 

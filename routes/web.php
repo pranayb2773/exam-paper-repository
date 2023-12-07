@@ -2,10 +2,14 @@
 
 use App\Livewire\Admin\Branch\Create as CreateBranch;
 use App\Livewire\Admin\Branch\Edit as EditBranch;
+use App\Livewire\Admin\Branch\Index as BranchesTable;
 use App\Livewire\Admin\Branch\Show as ShowBranch;
+use App\Livewire\Admin\ExamPaper\Create as CreateExamPaper;
+use App\Livewire\Admin\ExamPaper\Edit as EditExamPaper;
+use App\Livewire\Admin\ExamPaper\Index as ExamPapersTable;
+use App\Livewire\Admin\ExamPaper\Show as ShowExamPaper;
 use App\Livewire\Admin\User\Create as CreateUser;
 use App\Livewire\Admin\User\Edit as EditUser;
-use App\Livewire\Admin\Branch\Index as BranchesTable;
 use App\Livewire\Admin\User\Index as UsersTable;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +41,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/branches/create', CreateBranch::class)->name('branches.create');
     Route::get('/branches/{id}/edit', EditBranch::class)->name('branches.edit');
     Route::get('/branches/{id}/show', ShowBranch::class)->name('branches.show');
+
+    Route::get('/exam-papers', ExamPapersTable::class)->name('exam-papers');
+    Route::get('/exam-papers/create', CreateExamPaper::class)->name('exam-papers.create');
+    Route::get('/exam-papers/{id}/edit', EditExamPaper::class)->name('exam-papers.edit');
+    Route::get('/exam-papers/{id}/show', ShowExamPaper::class)->name('exam-papers.show');
 });
 
 require __DIR__.'/auth.php';
